@@ -1,8 +1,17 @@
 import { User } from "./fragment/User.jsx";
+import MyHobby from "./fragment/MyHobby.jsx";
 
 // using fragment to render all componenet to the root
 export default function App() {
-  return <User name="daniel" age={20} />;
+  return (
+    // grouping components to be direct child of the root
+    <>
+      <User name="daniel" age={20} />
+      <br />
+      <br />
+      <MyHobby />
+    </>
+  );
 }
 
 // export default function App() {
