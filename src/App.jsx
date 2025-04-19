@@ -1,18 +1,29 @@
-import { User } from "./fragment/User.jsx";
-import MyHobby from "./fragment/MyHobby.jsx";
+import "./globals.css";
+import { RenderArticleComponenet } from "./react-css/RenderArticleComponenet.jsx";
 
-// using fragment to render all componenet to the root
 export default function App() {
   return (
-    // grouping components to be direct child of the root
-    <>
-      <User name="daniel" age={20} />
-      <br />
-      <br />
-      <MyHobby />
-    </>
+    <div>
+      <RenderArticleComponenet />
+    </div>
   );
 }
+
+// import { User } from "./fragment/User.jsx";
+// import MyHobby from "./fragment/MyHobby.jsx";
+
+// // using fragment to render all componenet to the root
+// export default function App() {
+//   return (
+//     // grouping components to be direct child of the root
+//     <>
+//       <User name="daniel" age={20} />
+//       <br />
+//       <br />
+//       <MyHobby />
+//     </>
+//   );
+// }
 
 // export default function App() {
 //   return (
