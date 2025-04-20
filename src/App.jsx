@@ -1,13 +1,26 @@
 import "./globals.css";
-import { RenderArticleComponenet } from "./react-css/RenderArticleComponenet.jsx";
+import { User } from "./renderiing-list/User.jsx";
 
 export default function App() {
   return (
     <div>
-      <RenderArticleComponenet />
+      <User />
     </div>
   );
 }
+
+// continue from 1:55:43
+
+// import "./globals.css";
+// import { RenderArticleComponenet } from "./react-css/RenderArticleComponenet.jsx";
+
+// export default function App() {
+//   return (
+//     <div>
+//       <RenderArticleComponenet />
+//     </div>
+//   );
+// }
 
 // import { User } from "./fragment/User.jsx";
 // import MyHobby from "./fragment/MyHobby.jsx";
