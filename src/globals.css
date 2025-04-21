@@ -20,6 +20,14 @@ body {
   background-color: #1a1a1a;
   color: rgb(192, 192, 192);
 }
+input {
+  margin-bottom: 1rem;
+  padding: 0.4rem 0.4rem;
+  background-color: #333;
+  border: none;
+  border-radius: 0.5rem;
+  color: white;
+}
 
 .headingStyles {
   background-color: yellow;

@@ -1,16 +1,45 @@
-import "./globals.css";
-import { User } from "./renderiing-list/User.jsx";
+// React state: 254:40;
+import "./global.css";
 
-export default function App() {
-  return (
-    <div>
-      <User />
-    </div>
-  );
-}
+// // event handeling 2:25:18 --->
+// import "./globals.css";
+// import LoginForm from "./event-handeling/LoginForm.jsx";
 
-// continue from 1:55:43
+// export default function App() {
+//   return (
+//     <div>
+//       <LoginForm />
+//     </div>
+//   );
+// }
 
+// ------------------------------------------------
+// // #conditional rendering  <= 2:25
+// import "./globals.css";
+// import MorkAuthentication from "./conditional-rendering/MorkAuthentication.jsx";
+// import AccountStatus from "./conditional-rendering/AccountStatus.jsx";
+
+// export default function App() {
+//   return (
+//     <>
+//       <MorkAuthentication />
+//       <AccountStatus />
+//     </>
+//   );
+// }
+
+// ------------------------------------------------
+// import "./globals.css";
+// import { User } from "./renderiing-list/User.jsx";
+
+// export default function App() {
+//   return (
+//     <div>
+//       <User />
+//     </div>
+//   );
+// }
+// ------------------------------------------------
 // import "./globals.css";
 // import { RenderArticleComponenet } from "./react-css/RenderArticleComponenet.jsx";
 
@@ -21,7 +50,7 @@ export default function App() {
 //     </div>
 //   );
 // }
-
+// ------------------------------------------------
 // import { User } from "./fragment/User.jsx";
 // import MyHobby from "./fragment/MyHobby.jsx";
 
@@ -37,7 +66,7 @@ export default function App() {
 //     </>
 //   );
 // }
-
+// ------------------------------------------------
 // export default function App() {
 //   return (
 //     <div>
@@ -62,7 +91,7 @@ export default function App() {
 //     </div>
 //   );
 // }
-
+// ------------------------------------------------
 // import { UserProfileCard } from "./practice-component-and-props/UserProfileCard.jsx";
 // export default function App() {
 //   return (
@@ -83,7 +112,7 @@ export default function App() {
 //     </div>
 //   );
 // }
-
+// ------------------------------------------------
 // import { Product } from "./component/Product.jsx";
 // export default function App() {
 //   return (
