@@ -1,5 +1,61 @@
-// React state: 254:40;
-import "./global.css";
+// state and Array --->  3:30:00
+import "./globals.css";
+import UserProfile from "./state/UserProfile.jsx";
+
+import { useState } from "react";
+
+export default function App() {
+  const [users, setUsers] = useState([
+    {
+      id: 1,
+      username: "daniel",
+      email: "olatundedaniel@gmail.com",
+    },
+    {
+      id: 2,
+      username: "kemisola",
+      email: "kemisolasajo@gmail.com",
+    },
+    {
+      id: 3,
+      username: "Samuel",
+      email: "samuel@gmail.com",
+    },
+    {
+      id: 4,
+      username: "grace",
+      email: "grace@gmail.com",
+    },
+  ]);
+  // console.log(users);
+  return (
+    <div>
+      <h2>User Profile</h2>
+      <div className="User-details">
+        {users.map((user) => {
+          return <UserProfile key={user.id} user={user} setUsers={setUsers} />;
+        })}
+      </div>
+    </div>
+  );
+}
+// continue from here // 3:41:00
+
+// ------------------------------------------------
+// // React state: 2:54:40;
+// import CounterApp from "./state/counter-app/CounterApp.jsx";
+// import "./globals.css";
+// import { RegisterUser } from "./state/RegisterUser.jsx";
+// import { RegisterUserState2 } from "./state/RegisterUserState2.jsx";
+
+// export default function App() {
+//   return (
+//     // <>
+//     //   <RegisterUserState2 />
+//     // </>
+//     <CounterApp />
+//   );
+// }
 
 // // event handeling 2:25:18 --->
 // import "./globals.css";
@@ -54,7 +110,7 @@ import "./global.css";
 // import { User } from "./fragment/User.jsx";
 // import MyHobby from "./fragment/MyHobby.jsx";
 
-// // using fragment to render all componenet to the root
+// // using fragment to render all component to the root
 // export default function App() {
 //   return (
 //     // grouping components to be direct child of the root
@@ -99,15 +155,15 @@ import "./global.css";
 //       <h1>component and props practice</h1>
 
 //       <UserProfileCard
-//         name="Daniel Olatunde"
-//         avatarUrl="http://dannypyAvataUrl.com"
-//         email="danielolatunde@gmail.com"
-//         phone="0816552344"
-//         location="Rubber Estate, Ondo State Nigeria"
-//         bio="curious about coding"
-//         isOnline={true}
-//         height="50cm"
-//         favouriteFoods={["Rice", "Beans", "Egg", "milk"]}
+//         name="Daniel Olatunde"   // this is a prop
+//         avatarUrl="http://dannypyAvataUrl.com" // this is a prop
+//         email="danielolatunde@gmail.com"  // this is a prop
+//         phone="0816552344" // this is a prop
+//         location="Rubber Estate, Ondo State Nigeria" // this is a prop
+//         bio="curious about coding" // this is a prop
+//         isOnline={true} // this is a prop
+//         height="50cm" // this is a prop
+//         favouriteFoods={["Rice", "Beans", "Egg", "milk"]} // this is a prop
 //       />
 //     </div>
 //   );

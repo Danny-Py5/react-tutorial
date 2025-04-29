@@ -24,7 +24,7 @@ export default function LoginForm() {
         type="password"
         name="password"
         id="password"
-        placeholder="Input your passward"
+        placeholder="Input your password"
       />
       <br />
       <input type="submit" name="submit" id="submit" />
