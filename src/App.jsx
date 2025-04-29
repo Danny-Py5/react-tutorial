@@ -1,6 +1,7 @@
 // state and Array --->  3:30:00
 import "./globals.css";
 import UserProfile from "./state/UserProfile.jsx";
+import { PracticeMutationAndImmutability } from "./state/practice-mutation-immutability/PracticeMutationAndImmutability.jsx";
 
 import { useState } from "react";
 
@@ -31,11 +32,13 @@ export default function App() {
   return (
     <div>
       <h2>User Profile</h2>
-      <div className="User-details">
+      {/* <div className="User-details">
         {users.map((user) => {
           return <UserProfile key={user.id} user={user} setUsers={setUsers} />;
         })}
-      </div>
+      </div> */}
+
+      <PracticeMutationAndImmutability />
     </div>
   );
 }
