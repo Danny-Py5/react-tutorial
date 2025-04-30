@@ -1,26 +1,42 @@
-// react useEffect Hook ---> 4:21:00
+// fetching data from API ---> 4:41:00
 import "./globals.css";
-import { useState, useEffect } from "react";
+
+import { GetUsers } from "./fetching-data/GetUsers.jsx";
+import { PostUser } from "./fetching-data/PostUser.jsx";
 
 export default function App() {
-  const [count, setCount] = useState(0);
-  const [sync, setSync] = useState(false);
-
-  useEffect(() => {
-    document.title = `UseEffect Hook - ${count} times`;
-  }, [sync]); // this will run when the count changes
-
   return (
-    <div>
-      <h1>React useEffect Hook</h1>
-      <p>You clicked {count} times </p>
-      <button onClick={() => setCount((prevCount) => prevCount + 1)}>
-        Increment
-      </button>
-      <button onClick={() => setSync((preSync) => !preSync)}>Sync</button>
-    </div>
+    <>
+      <GetUsers />
+      <PostUser />
+    </>
   );
 }
+
+// ------------------------------------------
+// react useEffect Hook ---> 4:21:00
+// import "./globals.css";
+// import { useState, useEffect } from "react";
+
+// export default function App() {
+//   const [count, setCount] = useState(0);
+//   const [sync, setSync] = useState(false);
+
+//   useEffect(() => {
+//     document.title = `UseEffect Hook - ${count} times`;
+//   }, [sync]); // this will run when the count changes
+
+//   return (
+//     <div>
+//       <h1>React useEffect Hook</h1>
+//       <p>You clicked {count} times </p>
+//       <button onClick={() => setCount((prevCount) => prevCount + 1)}>
+//         Increment
+//       </button>
+//       <button onClick={() => setSync((preSync) => !preSync)}>Sync</button>
+//     </div>
+//   );
+// }
 
 // ---------------------------------------------------
 
