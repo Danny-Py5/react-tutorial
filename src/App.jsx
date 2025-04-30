@@ -1,54 +1,80 @@
-// state and Array --->  3:30:00
+// react useEffect Hook ---> 4:21:00
 import "./globals.css";
-import UserProfile from "./state/UserProfile.jsx";
-import { PracticeMutationAndImmutability } from "./state/practice-mutation-immutability/PracticeMutationAndImmutability.jsx";
-
-import { CreateUser } from "./state/CreateUser.jsx";
-
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function App() {
-  const [users, setUsers] = useState([
-    {
-      id: 1,
-      username: "daniel",
-      email: "olatundedaniel@gmail.com",
-    },
-    {
-      id: 2,
-      username: "kemisola",
-      email: "kemisolasajo@gmail.com",
-    },
-    {
-      id: 3,
-      username: "Samuel",
-      email: "samuel@gmail.com",
-    },
-    {
-      id: 4,
-      username: "grace",
-      email: "grace@gmail.com",
-    },
-  ]);
-  // console.log(users);
+  const [count, setCount] = useState(0);
+  const [sync, setSync] = useState(false);
+
+  useEffect(() => {
+    document.title = `UseEffect Hook - ${count} times`;
+  }, [sync]); // this will run when the count changes
+
   return (
     <div>
-      <h2>User Profile</h2>
-      <CreateUser setUsers={setUsers} />
-      <br /> <br />
-      {
-        <div className="User-details">
-          {users.map((user) => {
-            return (
-              <UserProfile key={user.id} user={user} setUsers={setUsers} />
-            );
-          })}
-        </div>
-      }
-      {/* <PracticeMutationAndImmutability /> */}
+      <h1>React useEffect Hook</h1>
+      <p>You clicked {count} times </p>
+      <button onClick={() => setCount((prevCount) => prevCount + 1)}>
+        Increment
+      </button>
+      <button onClick={() => setSync((preSync) => !preSync)}>Sync</button>
     </div>
   );
 }
+
+// ---------------------------------------------------
+
+// state and Array --->  3:30:00
+// import "./globals.css";
+// import UserProfile from "./state/UserProfile.jsx";
+// import { PracticeMutationAndImmutability } from "./state/practice-mutation-immutability/PracticeMutationAndImmutability.jsx";
+
+// import { CreateUser } from "./state/CreateUser.jsx";
+
+// import { useState } from "react";
+
+// export default function App() {
+//   const [users, setUsers] = useState([
+//     {
+//       id: 1,
+//       username: "daniel",
+//       email: "olatundedaniel@gmail.com",
+//     },
+//     {
+//       id: 2,
+//       username: "kemisola",
+//       email: "kemisolasajo@gmail.com",
+//     },
+//     {
+//       id: 3,
+//       username: "Samuel",
+//       email: "samuel@gmail.com",
+//     },
+//     {
+//       id: 4,
+//       username: "grace",
+//       email: "grace@gmail.com",
+//     },
+//   ]);
+//   // console.log(users);
+//   return (
+//     <div>
+//       <h2>User Profile</h2>
+//       <CreateUser setUsers={setUsers} />
+//       <br /> <br />
+//       {
+//         <div className="User-details">
+//           {users.map((user) => {
+//             return (
+//               <UserProfile key={user.id} user={user} setUsers={setUsers} />
+//             );
+//           })}
+//         </div>
+//       }
+//       {/* <PracticeMutationAndImmutability /> */}
+//     </div>
+//   );
+// }
 // continue from here // 3:41:00
 
 // ------------------------------------------------
