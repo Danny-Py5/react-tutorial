@@ -1,42 +1,39 @@
-// #simple website application
-import "./z-practice/global.css";
-import { Header } from "./z-practice/components/header/Header.jsx";
-import { Main } from "./z-practice/components/main/Main.jsx";
-import { Footer } from "./z-practice/components/footer/Footer.jsx";
+// custom hook ---> 5:24:07
+import { useState } from "react";
+import "./globals.css";
+import { RegisterUser } from "./state/RegisterUser.jsx";
 
 export default function App() {
+  const [toggle, setToggle] = useState(false);
+
   return (
-    <>
-      <Header />
-      <Main />
-      <Footer />
-    </>
+    <div>
+      <h1>Custom Hook</h1>
+      <hr />
+      <button onClick={() => setToggle((prevToggle) => !prevToggle)}>
+        Toggle
+      </button>
+      {toggle && <RegisterUser />}
+    </div>
   );
 }
 
-// // custom hook ---> 5:24:07
-// import { useEffect } from "react";
-// import "./globals.css";
+// // #simple website application
+// import "./z-practice/global.css";
+// import { Header } from "./z-practice/components/header/Header.jsx";
+// import { Main } from "./z-practice/components/main/Main.jsx";
+// import { Footer } from "./z-practice/components/footer/Footer.jsx";
 
 // export default function App() {
-//   useEffect(() => {
-//     // custom hook to handle window resize event
-//     const resizeEventHandler = () => {
-//       console.log("Window resized");
-//     };
-//     window.addEventListener("resize", resizeEventHandler);
-//     // cleanup function to remove the event listener
-//     return () => {
-//       window.removeEventListener("resize", resizeEventHandler);
-//     };
-//   }, []); // make sure it runs only once when the component mounts
 //   return (
-//     <div>
-//       <h1>Custom Hook</h1>
-//       <hr />
-//     </div>
+//     <>
+//       <Header />
+//       <Main />
+//       <Footer />
+//     </>
 //   );
 // }
+
 // ------------------------------------------------
 
 // // fetching data from API ---> 4:41:00

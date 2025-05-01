@@ -8,5 +8,10 @@
   </head>
   <body id="root">
     <script type="module" src="./src/main.jsx"></script>
+    <script>
+      document.addEventListener("resize", () => {
+        console.log("Window resized");
+      });
+    </script>
   </body>
 </html>
