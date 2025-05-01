@@ -1,17 +1,58 @@
-// fetching data from API ---> 4:41:00
-import "./globals.css";
-
-import { GetUsers } from "./fetching-data/GetUsers.jsx";
-import { PostUser } from "./fetching-data/PostUser.jsx";
+// #simple website application
+import "./z-practice/global.css";
+import { Header } from "./z-practice/components/header/Header.jsx";
+import { Main } from "./z-practice/components/main/Main.jsx";
+import { Footer } from "./z-practice/components/footer/Footer.jsx";
 
 export default function App() {
   return (
     <>
-      <GetUsers />
-      <PostUser />
+      <Header />
+      <Main />
+      <Footer />
     </>
   );
 }
+
+// // custom hook ---> 5:24:07
+// import { useEffect } from "react";
+// import "./globals.css";
+
+// export default function App() {
+//   useEffect(() => {
+//     // custom hook to handle window resize event
+//     const resizeEventHandler = () => {
+//       console.log("Window resized");
+//     };
+//     window.addEventListener("resize", resizeEventHandler);
+//     // cleanup function to remove the event listener
+//     return () => {
+//       window.removeEventListener("resize", resizeEventHandler);
+//     };
+//   }, []); // make sure it runs only once when the component mounts
+//   return (
+//     <div>
+//       <h1>Custom Hook</h1>
+//       <hr />
+//     </div>
+//   );
+// }
+// ------------------------------------------------
+
+// // fetching data from API ---> 4:41:00
+// import "./globals.css";
+
+// import { GetUsers } from "./fetching-data/GetUsers.jsx";
+// import { PostUser } from "./fetching-data/PostUser.jsx";
+
+// export default function App() {
+//   return (
+//     <>
+//       <GetUsers />
+//       <PostUser />
+//     </>
+//   );
+// }
 
 // ------------------------------------------
 // react useEffect Hook ---> 4:21:00

@@ -1,0 +1,72 @@
+.users {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+  margin: var(--gap) 0;
+  justify-content: flex-start;
+  border-radius: var(--border-radius-sm);
+  background-color: var(--section-bg);
+}
+
+.user {
+  display: flex;
+  flex-direction: row;
+  gap: var(--gap);
+  padding: var(--padding-sm);
+  border-radius: var(--border-radius-sm);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: all 0.3s ease-in-out;
+  flex: 1;
+  min-width: 300px;
+  max-width: 300px;
+  background: rgba(134, 133, 133, 0.2); /* Semi-transparent white background */
+  backdrop-filter: blur(10px); /* Adds the glass blur effect */
+  -webkit-backdrop-filter: blur(10px); /* For Safari support */
+  border: 1px solid rgba(100, 100, 100, 0.3); /* Subtle border for the glass effect */
+}
+
+.user-img-cont {
+  flex: 0 0 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  background-color: var(--primary-color);
+  justify-content: center;
+  align-items: center;
+}
+.child:nth-of-type(2) {
+  flex: 1;
+}
+.user-details {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.user-details h3 {
+  font-size: min(1.3rem, 4vw);
+  margin: 0;
+}
+.ratings,
+.actions {
+  max-width: 350px;
+  display: flex;
+  gap: var(--margin);
+  margin-top: var(--gap);
+  justify-content: space-between;
+}
+.actions {
+  display: flex;
+  gap: var(--gap);
+  margin-top: auto;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.action-btn {
+  flex: 1;
+}
+.action-btn:last-of-type {
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+}
