@@ -1,22 +1,36 @@
-// custom hook ---> 5:24:07
-import { useState } from "react";
+// custom hook --practice
+// i really struggle to understand the custom hook, but i will try to understand it better
+
 import "./globals.css";
-import { RegisterUser } from "./state/RegisterUser.jsx";
+import { SearchFood } from "./custom-hook/SearchFood.jsx";
 
 export default function App() {
-  const [toggle, setToggle] = useState(false);
-
   return (
     <div>
-      <h1>Custom Hook</h1>
-      <hr />
-      <button onClick={() => setToggle((prevToggle) => !prevToggle)}>
-        Toggle
-      </button>
-      {toggle && <RegisterUser />}
+      <SearchFood />
     </div>
   );
 }
+
+// // custom hook ---> 5:24:07
+// import { useState } from "react";
+// import "./globals.css";
+// import { RegisterUser } from "./state/RegisterUser.jsx";
+
+// export default function App() {
+//   const [toggle, setToggle] = useState(false);
+
+//   return (
+//     <div>
+//       <h1>Custom Hook</h1>
+//       <hr />
+//       <button onClick={() => setToggle((prevToggle) => !prevToggle)}>
+//         Toggle
+//       </button>
+//       {toggle && <RegisterUser />}
+//     </div>
+//   );
+// }
 
 // // #simple website application
 // import "./z-practice/global.css";
