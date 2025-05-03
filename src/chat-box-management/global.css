@@ -1,0 +1,128 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  /* border: 1px solid red; */
+}
+:root {
+  /* color */
+  --background-color: whitesmoke;
+  --background-color-primary: #ffffff;
+  --background-color-accent: #fff3;
+
+  --border-color: #7774;
+
+  --primary-color: #a5c00a98;
+  --primary-color-light: #e1fa51e1;
+  --color: #333;
+
+  --section-bg: #e9e6d9;
+  --header-bg: #cfab856c;
+  --navbar-mobile-bg: #cfab85;
+
+  --main-bg: #cfab8546;
+  --padding: 1rem;
+  --gap: 8px;
+  /* border */
+  --border-radius: 8px;
+  --border-radius-sm: 4px;
+  --border-radius-lg: 16px;
+  --border-radius-xl: 32px;
+  --border-radius-xxl: 64px;
+
+  /* margin */
+  --margin: 1rem;
+  --margin-sm: 0.5rem;
+  --margin-lg: 1.5rem;
+
+  /* padding */
+  --padding: min(1rem, 5vw);
+  --padding-sm: 0.7rem;
+  --padding-lg: 1.5rem;
+
+  /* max-width */
+  --max-width: 1400px;
+  /* --header-nav-max-width: 70%; */
+
+  /* transition */
+  --transition-speed: 0.2s;
+  --transition-speed-fast: 0.1s;
+  --transition-speed-slow: 0.3s;
+  /* box-shadow */
+  --box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* width */
+  --card-width: 350px;
+  --card-min-height: 300px;
+}
+
+html {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  scroll-behavior: smooth;
+  color: var(--color);
+}
+
+body {
+  height: 100vh;
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+}
+
+body :where(p, a, h1, h2, h3, h4) {
+  line-height: 1.5;
+  margin-bottom: var(--gap);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-size: min(2rem, 10vw);
+  font-weight: 600;
+}
+
+p,
+a {
+  font-size: min(1rem, 8vw);
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--border-radius);
+  object-fit: cover;
+}
+button {
+  padding: var(--padding-sm) var(--padding-lg);
+  background-color: rgb(27, 26, 26);
+  color: inherit;
+  font-size: inherit;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  white-space: nowrap;
+}
+header,
+main,
+footer {
+  padding: var(--padding-sm);
+  background-color: var(--section-bg);
+  border-radius: var(--border-radius-sm);
+}
+header {
+  background-color: var(--header-bg);
+}
+
+main {
+  flex: 1;
+  background-color: var(--main-bg);
+}
+
+/* block */
+.section-wrapper {
+  max-width: var(--max-width);
+  margin: auto;
+}

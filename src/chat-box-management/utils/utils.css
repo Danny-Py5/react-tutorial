@@ -1,0 +1,36 @@
+.center-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cf-space-between {
+  justify-content: space-between;
+}
+.cf-space-around {
+  justify-content: space-around;
+}
+.cf-space-evenly {
+  justify-content: space-evenly;
+}
+.cf-gap-1 {
+  gap: var(--gap);
+}
+.cf-gap-2 {
+  gap: calc(var(--gap) * 2);
+}
+.card {
+  background-color: var(--background-color-primary);
+  padding: var(--padding);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--box-shadow);
+  width: var(--card-min-width);
+  min-height: var(--card-min-height);
+}
+.p {
+  opacity: 0.8;
+}
+.button-secondary {
+  border: 2px solid var(--header-bg);
+  border-radius: var(--border-radius-xxl);
+  background-color: unset;
+}

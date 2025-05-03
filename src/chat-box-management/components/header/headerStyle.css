@@ -1,0 +1,195 @@
+.header-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gap);
+  width: 100%;
+}
+.logo {
+  border-radius: var(--border-radius-xxl);
+}
+
+.logo {
+  background-color: var(--background-color-primary);
+  padding: var(--padding-sm);
+}
+.header-nav {
+  flex: 1;
+  /* max-width: var(--header-nav-max-width); */
+}
+.navbar,
+li.active {
+  border-radius: var(--border-radius-xxl);
+}
+
+.navbar,
+.user-info {
+  display: flex;
+  align-items: space-between;
+  background-color: var(--background-color-accent);
+  align-items: center;
+  /* width: 300px; */
+  padding-right: var(--padding-sm);
+  gap: calc(var(--gap) * 2);
+  justify-content: space-between;
+}
+
+.navbar li.active {
+  background-color: var(--background-color-primary);
+  padding: 5px;
+  transition: var(--transition-speed-fast) ease-in;
+}
+.navbar li.active span {
+  display: block;
+}
+
+/* remove padding from the navbar when the last li is active */
+.navbar:has(li:last-child.active) {
+  padding-right: 0;
+}
+.navbar li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: var(--gap);
+  position: relative;
+  transition: var(--transition-speed-fast) ease-in;
+}
+.navbar li:not(.active):where(:hover)::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100%;
+  font-weight: 600;
+  background-color: var(--background-color-primary);
+  /* color: var(--background-color); */
+  border-radius: var(--border-radius-sm);
+}
+.navbar li span {
+  white-space: nowrap;
+  display: none;
+}
+
+i {
+  padding: var(--padding-sm);
+  border-radius: 20px;
+  background-color: var(--header-bg);
+  color: #444;
+  cursor: pointer;
+  transition: var(--transition-speed-fast) ease-in;
+}
+
+.user-name,
+.user-info i {
+  background-color: var(--background-color-primary);
+}
+i:hover {
+  opacity: 0.8;
+  transform: translateY(-3px);
+}
+.user-info {
+  /* padding: var(--padding-sm); */
+  background-color: unset;
+  border-radius: var(--border-radius-xxl);
+  gap: calc(var(--gap) * 2);
+}
+.user-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: inherit;
+  border-radius: var(--border-radius-xxl);
+}
+.user-name-abbr {
+  background-color: var(--primary-color-light);
+  padding: var(--padding-sm);
+  border-radius: var(--border-radius-xxl);
+  margin-right: 5px;
+}
+.header-btt {
+  background-color: unset;
+  display: none;
+  padding: 0;
+}
+.header-btt-i {
+  font-size: 2rem;
+  /* background-color: unset; */
+  transform: unset !important;
+}
+/* styles for menu toggling */
+.header.active .header-nav {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+  position: absolute;
+  top: 80px;
+  right: -20px;
+  width: 60%;
+  background-color: var(--navbar-mobile-bg);
+  padding: var(--padding);
+  z-index: 2;
+  border-top-left-radius: var(--border-radius-lg);
+  border-bottom-left-radius: var(--border-radius-lg);
+  box-shadow: var(--box-shadow);
+}
+.header.active .header-nav .navbar {
+  flex-direction: column;
+  margin-top: 50px;
+  width: 100%;
+  gap: var(--gap);
+  background-color: unset;
+  border-radius: 0;
+}
+.header.active .header-nav .navbar li {
+  width: 100%;
+  justify-content: flex-end;
+  border-radius: var(--border-radius);
+  background: #e4e3e33f;
+  cursor: pointer;
+}
+.header.active .header-nav .navbar span {
+  display: block;
+  order: -1;
+}
+.header.active .header-nav .navbar li.active {
+  background: #e0e0e0e0;
+}
+/* remove the tooltip when hover. No need again  */
+.header.active .header-nav .navbar li:not(.active):where(:hover)::before {
+  content: none;
+}
+@media (max-width: 860px) {
+  .header-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  .header-btt {
+    display: block;
+  }
+
+  .header-nav {
+    display: none;
+  }
+  .hero-short-info div:first-of-type {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+@media (max-width: 450px) {
+  .header-nav {
+    width: 100%;
+  }
+  .header.active .header-nav {
+    width: 100%;
+  }
+}

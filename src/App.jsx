@@ -1,16 +1,96 @@
-// custom hook --practice
-// i really struggle to understand the custom hook, but i will try to understand it better
-
-import "./globals.css";
-import { SearchFood } from "./custom-hook/SearchFood.jsx";
+import { Header } from "./chat-box-management/components/header/Header.jsx";
+import { Main } from "./chat-box-management/components/main/Main.jsx";
+import { Footer } from "./chat-box-management/components/footer/Footer.jsx";
+import "./chat-box-management/global.css";
 
 export default function App() {
   return (
-    <div>
-      <SearchFood />
-    </div>
+    <>
+      <Header />
+      <Main />
+      <Footer />
+    </>
   );
 }
+
+//  -----------------------------------------------
+// // context API ---> 5:43:36
+// import "./globals.css";
+
+// import { layerContext } from "./contextAPI/context/LayerContext.js";
+// import FirstLayer from "./contextAPI/FirstLayer.jsx";
+// import { useEffect, useState } from "react";
+
+// export default function App() {
+//   const [layerData, setLayerData] = useState({
+//     id: 0,
+//     name: "Daniel Olatunde",
+//     age: 21,
+//     likes: 34,
+//     // setLayerData: () => {},
+//   });
+//   const [inputValue, setInputValue] = useState(layerData.name);
+//   const handleClick = () => {
+//     setLayerData((prevLayerData) => ({
+//       ...prevLayerData,
+//       name: inputValue,
+//     }));
+//     setInputValue("");
+//   };
+
+//   useEffect(() => {
+//     console.log(layerData);
+//   }, [layerData]); // this will run when the layerData changes
+//   return (
+//     <div>
+//       <div>
+//         <h1>React Context API</h1>
+//         <hr />
+//         <p>
+//           Context API is a way to pass data through the component tree without
+//           having to pass props down manually at every level.
+//         </p>
+//         <p>
+//           It is used to share global data such as themes, user authentication,
+//           and language settings.
+//         </p>
+//         <p>It is also used to avoid prop drilling.</p>
+//       </div>
+//       <hr />
+//       <div>
+//         <label htmlFor="input">Change LayerName:</label>
+//         <input
+//           type="text"
+//           id="input"
+//           value={inputValue}
+//           onChange={(e) => setInputValue(e.target.value)}
+//         />
+//         <button onClick={handleClick}>Change</button>
+//       </div>
+//       <div>
+//         <layerContext.Provider
+//           value={{ layerData, setLayerData }} // this is the state value and its setter that will be passed to the context provider
+//         >
+//           <FirstLayer />
+//         </layerContext.Provider>
+//       </div>
+//     </div>
+//   );
+// }
+//  ----------------------------------------------------
+// // custom hook --practice
+// // i really struggle to understand the custom hook, but i will try to understand it better
+
+// import "./globals.css";
+// import { SearchFood } from "./custom-hook/SearchFood.jsx";
+
+// export default function App() {
+//   return (
+//     <div>
+//       <SearchFood />
+//     </div>
+//   );
+// }
 
 // // custom hook ---> 5:24:07
 // import { useState } from "react";
