@@ -53,6 +53,7 @@
   /* width */
   --card-width: 350px;
   --card-min-height: 300px;
+  --header-nav-width: 60%; /* on tablet and desktop */
 }
 
 html {

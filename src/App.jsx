@@ -1,17 +1,120 @@
-import { Header } from "./chat-box-management/components/header/Header.jsx";
-import { Main } from "./chat-box-management/components/main/Main.jsx";
-import { Footer } from "./chat-box-management/components/footer/Footer.jsx";
-import "./chat-box-management/global.css";
+// context API ---> 5:43:36
+import "./globals.css";
+
+import { layerContext } from "./contextAPI/context/LayerContext.js";
+import FirstLayer from "./contextAPI/FirstLayer.jsx";
+import { useEffect, useState } from "react";
+import useFetchUser from "./contextAPI/hook/useFetchUser.js";
 
 export default function App() {
+  const [user, loading, error] = useFetchUser(9);
+  const [layerData, setLayerData] = useState({});
+  const [inputValue, setInputValue] = useState("");
+  const handleClick = () => {
+    setLayerData((prevLayerData) => ({
+      ...prevLayerData,
+      name: inputValue,
+    }));
+    setInputValue("");
+  };
+  useEffect(() => {
+    if (user && !loading) {
+      setLayerData(user);
+      // setInputValue(user.name);
+    }
+  }, [user, loading, error]); // this will run when the layerData changes
   return (
-    <>
-      <Header />
-      <Main />
-      <Footer />
-    </>
+    <div>
+      <div>
+        <h1>React Context API</h1>
+        <hr />
+        <p>
+          Context API is a way to pass data through the component tree without
+          having to pass props down manually at every level.
+        </p>
+        <p>
+          It is used to share global data such as themes, user authentication,
+          and language settings.
+        </p>
+        <p>It is also used to avoid prop drilling.</p>
+      </div>
+      <hr />
+      <div>
+        <label htmlFor="input">Change LayerName:</label>
+        <input
+          type="text"
+          id="input"
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+        />
+        <button onClick={handleClick}>Change</button>
+      </div>
+      <div>
+        <layerContext.Provider
+          value={{ layerData, setLayerData, loading }} // this is the state value and its setter that will be passed to the context provider
+        >
+          <FirstLayer />
+        </layerContext.Provider>
+      </div>
+    </div>
   );
 }
+
+// //debounce on my own but helped by ai at last
+// import { useEffect, useState } from "react";
+// import useDebounceSearch from "./temp.js";
+// import "./globals.css";
+
+// export default function App() {
+//   const [inputValue, setInputValue] = useState("");
+//   const [searchedResult, setSearchedResult] = useState("");
+
+//   const searchedValue = useDebounceSearch(inputValue, 1000);
+
+//   useEffect(() => {
+//     const nameList = ["kemi", "daniel", "samuel ", "blessing", "wale"];
+
+//     if (searchedValue) {
+//       const matchedWord = nameList.find((name) => {
+//         return name
+//           .toLocaleLowerCase()
+//           .includes(searchedValue.toLocaleLowerCase());
+//       });
+//       setSearchedResult(matchedWord || "No match found");
+//     } else {
+//       setSearchedResult(""); // Clear the result when input is empty
+//     }
+//   }, [searchedValue]);
+
+//   return (
+//     <div>
+//       <span>Search for names: </span>
+//       <input
+//         type="text"
+//         value={inputValue}
+//         onChange={(e) => setInputValue((currentValue) => e.target.value)}
+//       />
+//       <p> You searched: {searchedResult}</p>
+//     </div>
+//   );
+// }
+
+// mini project
+
+// import { Header } from "./chat-box-management/components/header/Header.jsx";
+// import { Main } from "./chat-box-management/components/main/Main.jsx";
+// import { Footer } from "./chat-box-management/components/footer/Footer.jsx";
+// import "./chat-box-management/global.css";
+
+// export default function App() {
+//   return (
+//     <>
+//       <Header />
+//       <Main />
+//       <Footer />
+//     </>
+//   );
+// }
 
 //  -----------------------------------------------
 // // context API ---> 5:43:36

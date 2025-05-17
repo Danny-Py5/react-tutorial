@@ -4,10 +4,13 @@ import { useLinkClick } from "./useLinkClick.js";
 import HeroCard from "./HeroCard.jsx";
 import "./headerStyle.css";
 import { useMenuClick } from "./useMenuClick.js";
+import { useWindowResize } from "./useWindowResize.js";
 
 export function Header() {
   useLinkClick();
   useMenuClick();
+  useWindowResize();
+
   useEffect(() => {
     const header = document.querySelector(".header");
     const menu = document.querySelector(".header-menu");

@@ -134,14 +134,26 @@ i:hover {
   position: absolute;
   top: 80px;
   right: -20px;
-  width: 60%;
+  width: var(--header-nav-width);
   background-color: var(--navbar-mobile-bg);
   padding: var(--padding);
   z-index: 2;
   border-top-left-radius: var(--border-radius-lg);
   border-bottom-left-radius: var(--border-radius-lg);
   box-shadow: var(--box-shadow);
+  animation: smoothShow 0.5s ease both;
 }
+@keyframes smoothShow {
+  from {
+    opacity: 0;
+    width: 0;
+  }
+  to {
+    opacity: 1;
+    width: var(--header-nav-width);
+  }
+}
+
 .header.active .header-nav .navbar {
   flex-direction: column;
   margin-top: 50px;
@@ -168,6 +180,7 @@ i:hover {
 .header.active .header-nav .navbar li:not(.active):where(:hover)::before {
   content: none;
 }
+
 @media (max-width: 860px) {
   .header-wrapper {
     flex-direction: column;
@@ -186,8 +199,19 @@ i:hover {
   }
 }
 @media (max-width: 450px) {
-  .header-nav {
+  .header.active .header-nav {
     width: 100%;
+    animation: smoothShowMobile 0.5s ease both !important;
+  }
+  @keyframes smoothShowMobile {
+    from {
+      opacity: 0;
+      width: 0;
+    }
+    to {
+      opacity: 1;
+      width: 100%;
+    }
   }
   .header.active .header-nav {
     width: 100%;
