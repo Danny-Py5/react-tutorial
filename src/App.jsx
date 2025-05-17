@@ -1,64 +1,91 @@
-// context API ---> 5:43:36
+// react router ---> 6:41;
 import "./globals.css";
 
-import { layerContext } from "./contextAPI/context/LayerContext.js";
-import FirstLayer from "./contextAPI/FirstLayer.jsx";
-import { useEffect, useState } from "react";
-import useFetchUser from "./contextAPI/hook/useFetchUser.js";
+import { Link, Outlet } from "react-router-dom";
 
 export default function App() {
-  const [user, loading, error] = useFetchUser(9);
-  const [layerData, setLayerData] = useState({});
-  const [inputValue, setInputValue] = useState("");
-  const handleClick = () => {
-    setLayerData((prevLayerData) => ({
-      ...prevLayerData,
-      name: inputValue,
-    }));
-    setInputValue("");
-  };
-  useEffect(() => {
-    if (user && !loading) {
-      setLayerData(user);
-      // setInputValue(user.name);
-    }
-  }, [user, loading, error]); // this will run when the layerData changes
   return (
     <div>
-      <div>
-        <h1>React Context API</h1>
-        <hr />
-        <p>
-          Context API is a way to pass data through the component tree without
-          having to pass props down manually at every level.
-        </p>
-        <p>
-          It is used to share global data such as themes, user authentication,
-          and language settings.
-        </p>
-        <p>It is also used to avoid prop drilling.</p>
-      </div>
-      <hr />
-      <div>
-        <label htmlFor="input">Change LayerName:</label>
-        <input
-          type="text"
-          id="input"
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-        />
-        <button onClick={handleClick}>Change</button>
-      </div>
-      <div>
-        <layerContext.Provider
-          value={{ layerData, setLayerData, loading }} // this is the state value and its setter that will be passed to the context provider
-        >
-          <FirstLayer />
-        </layerContext.Provider>
-      </div>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/users">Users</Link>
+          </li>
+          <li>
+            <Link to="/blog-posts">Blog Posts</Link>
+          </li>
+        </ul>
+      </nav>
+      <h1>Home Page</h1>
+      <Outlet />
     </div>
   );
 }
+
+// context API ---> 5:43:36
+// import "./globals.css";
+
+// import { layerContext } from "./contextAPI/context/LayerContext.js";
+// import FirstLayer from "./contextAPI/FirstLayer.jsx";
+// import { useEffect, useState } from "react";
+// import useFetchUser from "./contextAPI/hook/useFetchUser.js";
+
+// export default function App() {
+//   const [user, loading, error] = useFetchUser(9);
+//   const [layerData, setLayerData] = useState({});
+//   const [inputValue, setInputValue] = useState("");
+//   const handleClick = () => {
+//     setLayerData((prevLayerData) => ({
+//       ...prevLayerData,
+//       name: inputValue,
+//     }));
+//     setInputValue("");
+//   };
+//   useEffect(() => {
+//     if (user && !loading) {
+//       setLayerData(user);
+//       // setInputValue(user.name);
+//     }
+//   }, [user, loading, error]); // this will run when the layerData changes
+//   return (
+//     <div>
+//       <div>
+//         <h1>React Context API</h1>
+//         <hr />
+//         <p>
+//           Context API is a way to pass data through the component tree without
+//           having to pass props down manually at every level.
+//         </p>
+//         <p>
+//           It is used to share global data such as themes, user authentication,
+//           and language settings.
+//         </p>
+//         <p>It is also used to avoid prop drilling.</p>
+//       </div>
+//       <hr />
+//       <div>
+//         <label htmlFor="input">Change LayerName:</label>
+//         <input
+//           type="text"
+//           id="input"
+//           value={inputValue}
+//           onChange={(e) => setInputValue(e.target.value)}
+//         />
+//         <button onClick={handleClick}>Change</button>
+//       </div>
+//       <div>
+//         <layerContext.Provider
+//           value={{ layerData, setLayerData, loading }} // this is the state value and its setter that will be passed to the context provider
+//         >
+//           <FirstLayer />
+//         </layerContext.Provider>
+//       </div>
+//     </div>
+//   );
+// }
 
 // //debounce on my own but helped by ai at last
 // import { useEffect, useState } from "react";
