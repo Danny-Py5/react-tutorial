@@ -1,4 +1,4 @@
-// react router ---> 6:41;
+// useNavigate 7:1..
 import "./globals.css";
 import { Link } from "react-router-dom";
 import { Outlet } from "react-router-dom";
@@ -23,6 +23,32 @@ export default function App() {
     </div>
   );
 }
+
+// // react router ---> 6:41;
+// import "./globals.css";
+// import { Link } from "react-router-dom";
+// import { Outlet } from "react-router-dom";
+
+// export default function App() {
+//   return (
+//     <div>
+//       <nav>
+//         <ul>
+//           <li>
+//             <Link to="/">Home</Link>
+//           </li>
+//           <li>
+//             <Link to="/products">Product</Link>
+//           </li>
+//           <li>
+//             <Link to="/about">About</Link>
+//           </li>
+//         </ul>
+//       </nav>
+//       <Outlet />
+//     </div>
+//   );
+// }
 
 // context API ---> 5:43:36
 // import "./globals.css";
