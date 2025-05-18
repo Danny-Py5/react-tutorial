@@ -1,7 +1,7 @@
 // react router ---> 6:41;
 import "./globals.css";
-
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
 export default function App() {
   return (
@@ -12,14 +12,13 @@ export default function App() {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/users">Users</Link>
+            <Link to="/products">Product</Link>
           </li>
           <li>
-            <Link to="/blog-posts">Blog Posts</Link>
+            <Link to="/about">About</Link>
           </li>
         </ul>
       </nav>
-      <h1>Home Page</h1>
       <Outlet />
     </div>
   );
