@@ -3,9 +3,8 @@ import { createRoot } from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import App from "./App.jsx";
 
-import Home from "./react-router/exercise/Home.jsx";
-import Products from "./react-router/exercise/Products.jsx";
-import About from "./react-router/exercise/About.jsx";
+import BlogPostsPage from "./react-router/pages/BlogPostsPage.jsx";
+import UserPage from "./react-router/pages/UserPages.jsx";
 
 const router = createBrowserRouter([
   {
@@ -13,16 +12,12 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: "/",
-        element: <Home />,
+        path: "/blog-post",
+        element: <BlogPostsPage />,
       },
       {
-        path: "/about",
-        element: <About />,
-      },
-      {
-        path: "/products",
-        element: <Products />,
+        path: "/users",
+        element: <UserPage />,
       },
     ],
   },
