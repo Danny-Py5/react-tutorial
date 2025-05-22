@@ -1,0 +1,100 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --padding: 1rem;
+
+  --primary-color: rgb(0, 52, 59);
+  --header-bg: whitesmoke;
+
+  --header-li-width: 75px;
+  --header-li-height: 35px;
+}
+
+/* body {
+  background-color: #333;
+  color: whitesmoke;
+} */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--padding);
+  color: var(--primary-color);
+  background-color: var(--header-bg);
+  margin-bottom: 50px;
+  box-shadow: 0 5px 20px rgba(172, 172, 172, 0.486);
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+.navbar-cont {
+  max-width: 500px;
+  flex: 1;
+}
+
+.navbar-cont ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style-type: none;
+  background-color: #00313d27;
+  padding: calc(var(--padding) / 2);
+  border-radius: 1rem;
+  position: relative;
+}
+.navbar-cont li {
+  width: var(--header-li-width);
+  height: var(--header-li-height);
+  display: flex;
+  align-items: center;
+}
+a:any-link {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.navbar-cont li a {
+  display: block;
+  width: 100%;
+  text-align: center;
+  /* color: var(--primary-color); */
+  padding: calc(var(--padding) / 2);
+  border-radius: 1rem;
+  z-index: 1;
+}
+.navbar-cont li a.active {
+  color: whitesmoke;
+}
+
+.indicator {
+  position: absolute;
+  width: var(--header-li-width);
+  height: var(--header-li-height);
+  background-color: var(--primary-color);
+  left: calc(var(--padding) / 2);
+  border-radius: 1rem;
+  padding: 0;
+  transition: 0.5s;
+}
+
+.navbar-cont:has(ul li:nth-of-type(1) a.active) .indicator {
+  transform: translateX(0);
+}
+.navbar-cont:has(ul li:nth-of-type(2) a.active) .indicator {
+  transform: translateX(calc(var(--header-li-width) + 10px));
+}
+.navbar-cont:has(ul li:nth-of-type(3) a.active) .indicator {
+  transform: translateX(calc(var(--header-li-width) * 2 + 15px));
+}
+.navbar-cont:has(ul li:nth-of-type(4) a.active) .indicator {
+  transform: translateX(calc(var(--header-li-width) * 3 + 20px));
+}
+.navbar-cont:has(ul li:nth-of-type(5) a.active) .indicator {
+  transform: translateX(calc(var(--header-li-width) * 4 + 25px));
+}
+.navbar-cont:has(ul li:nth-of-type(6) a.active) .indicator {
+  transform: translateX(calc(var(--header-li-width) * 5 + 30px));
+}

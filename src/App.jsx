@@ -1,57 +1,71 @@
-// useNavigate 7:1..
-import "./globals.css";
-import { Link, useNavigate } from "react-router-dom";
+// practice header
 import { Outlet } from "react-router-dom";
+import Header from "./header/Header.jsx";
 
 export default function App() {
-  const navigate = useNavigate();
+  document.title = "Header Practice";
   return (
-    <div>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/blog-post">Blog Post</Link>
-          </li>
-          <li>
-            <Link to="/users">users page</Link>
-          </li>
-        </ul>
-      </nav>
-      <h1>welcome to the home page </h1>
-      <div>
-        <input
-          type="text"
-          onChange={(e) => {
-            if (e.target.value.length > 10) {
-              navigate("/blog-post", {
-                state: {
-                  posts: [
-                    {
-                      id: 1,
-                      name: "Olatunde Daniel",
-                      status: "single",
-                      title: "Hello world!",
-                    },
-                  ],
-                },
-              });
-            } // if closing tag
-          }}
-        />
-      </div>
-      <p style={{ width: "50ch" }}>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto tempore
-        necessitatibus accusantium facere sunt! Officiis sunt expedita, quod rem
-        ullam nostrum excepturi molestiae at debitis quisquam quibusdam ipsam
-        reiciendis! Rem.
-      </p>
+    <>
+      <Header />
       <Outlet />
-    </div>
+    </>
   );
 }
+
+// // useNavigate 7:1..
+// import "./globals.css";
+// import { Link, useNavigate } from "react-router-dom";
+// import { Outlet } from "react-router-dom";
+
+// export default function App() {
+//   const navigate = useNavigate();
+//   return (
+//     <div>
+//       <nav>
+//         <ul>
+//           <li>
+//             <Link to="/">Home</Link>
+//           </li>
+//           <li>
+//             <Link to="/blog-post">Blog Post</Link>
+//           </li>
+//           <li>
+//             <Link to="/users">users page</Link>
+//           </li>
+//         </ul>
+//       </nav>
+//       <h1>welcome to the home page </h1>
+//       <div>
+//         <input
+//           type="text"
+//           onChange={(e) => {
+//             if (e.target.value.length > 10) {
+//               navigate("/blog-post", {
+//                 state: {
+//                   posts: [
+//                     {
+//                       id: 1,
+//                       name: "Olatunde Daniel",
+//                       status: "single",
+//                       title: "Hello world!",
+//                     },
+//                   ],
+//                 },
+//               });
+//             } // if closing tag
+//           }}
+//         />
+//       </div>
+//       <p style={{ width: "50ch" }}>
+//         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto tempore
+//         necessitatibus accusantium facere sunt! Officiis sunt expedita, quod rem
+//         ullam nostrum excepturi molestiae at debitis quisquam quibusdam ipsam
+//         reiciendis! Rem.
+//       </p>
+//       <Outlet />
+//     </div>
+//   );
+// }
 
 // // react router ---> 6:41;
 // import "./globals.css";
