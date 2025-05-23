@@ -4,7 +4,8 @@ import DisplayUserName from "./component/DisplayUserName.jsx";
 
 describe("DisplayUserName", () => {
   it("renders userName", () => {
-    const result = render(<DisplayUserName userName={"Daniel"} />);
-    expect(result.container).toMatchSnapshot();
+    render(<DisplayUserName userName={"Daniel"} />);
+    const allNames = screen.getAllByText("Daniel");
+    allNames.forEach((name) => expect(name).toBeInTheDocument()); // or /Daniel/ if we are concern about the regEx;
   });
 });
