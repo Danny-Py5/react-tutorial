@@ -24,7 +24,7 @@ export default function Header() {
         link.removeEventListener("click", addActive);
       });
     };
-  });
+  }, []);
   return (
     <header>
       <div className="logo">
