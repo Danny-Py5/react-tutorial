@@ -3,17 +3,12 @@ import { render, screen } from "@testing-library/react";
 import DisplayUserName from "./component/DisplayUserName.jsx";
 
 describe("DisplayUserName", () => {
-  it("renders userName", () => {
+  it("renders userName", async () => {
     render(<DisplayUserName userName={"Daniel"} />);
-    expect(screen.queryByText("Daniel Olatunde")).toBeNull();
-
-    // queryByText and getByText works differently
-    // getByText : throws an error if the text not found while the queryByText doesn't
-
-    // the usefulness of queryByText is that we can use it to check for a text that is
-    // not in the document and since it returns null, use that opportunity to expect
-    // something like .not.toBeInTheDocument, .toBeNull. which allows us to expect
-    // on what not in the document instead of the error that would be thrown when
-    // we use getByText
+    expect(
+      await screen.findByText("Daniel", {}, { timeout: 6000 }) // the timeout means to quit(throw error) if it takes longer than 6s to load i.e to find the "Daniel" text. Meanwhile, the testTimeOut set in the vite.config.js should be greater than or equal to the 6s else it fails (quit, throw err). Technically speaking, the findByText is an asynchronous code.
+    ).toBeInTheDocument();
   });
 });
+
+// continue from 8:05
