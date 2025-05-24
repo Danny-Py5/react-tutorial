@@ -24,8 +24,7 @@ describe("App", () => {
       render(<App />);
       const editButton = screen.getByRole("button", { name: "Edit" });
       await userEvent.click(editButton);
-      const userNameInput = screen.getByRole("textbox", { name: "username" });
-      expect(userNameInput).toBeInTheDocument();
+      expect(screen.getByLabelText("Username:")).toBeInTheDocument();
     });
   });
 });

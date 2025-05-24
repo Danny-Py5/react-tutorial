@@ -8,14 +8,15 @@ export default function UserDetails({ user, setUsers }) {
   return (
     <div>
       <button
+        type="button"
         onClick={() => {
           setIsEditing((current) => !current);
         }}
       >
         Edit
       </button>
-
       <button
+        type="button"
         onClick={() => {
           setUsers((currentUsers) =>
             currentUsers.filter((currentUser) => currentUser.id !== user.id)
@@ -26,6 +27,7 @@ export default function UserDetails({ user, setUsers }) {
       </button>
       {isEditing && (
         <button
+          type="button"
           onClick={() => {
             setUsers((currentUsers) => {
               return currentUsers.map((currentUser) =>
@@ -44,13 +46,18 @@ export default function UserDetails({ user, setUsers }) {
         Id: <span>{user.id}</span>
       </p>
       <p>
-        Name: <span>{user.name}</span>
+        <b> Name: </b>
+        <span>{user.name}</span>
       </p>
-
       <p>
-        UserName:{" "}
+        {isEditing ? (
+          <label htmlFor="username">Username: </label>
+        ) : (
+          <b>Username: </b>
+        )}
         {isEditing ? (
           <input
+            id="username"
             aria-label="username"
             type="text"
             value={userNameInput}

@@ -3,10 +3,14 @@
 exports[`App > should render user 1`] = `
 <div>
   <div>
-    <button>
+    <button
+      type="button"
+    >
       Edit
     </button>
-    <button>
+    <button
+      type="button"
+    >
       Delete
     </button>
     <p>
@@ -16,14 +20,17 @@ exports[`App > should render user 1`] = `
       </span>
     </p>
     <p>
-      Name: 
+      <b>
+         Name: 
+      </b>
       <span>
         Daniel Olatunde
       </span>
     </p>
     <p>
-      UserName:
-       
+      <b>
+        Username: 
+      </b>
       <span>
         Dannypy
       </span>
