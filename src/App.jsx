@@ -5,24 +5,8 @@ import "./globals.css";
 
 import { useState } from "react";
 
-export default function App() {
-  const [users, setUsers] = useState([
-    {
-      id: 1,
-      name: "Daniel Olatunde",
-      userName: "Dannypy",
-    },
-    // {
-    //   id: 2,
-    //   name: "sunday Bright",
-    //   userName: "Hello",
-    // },
-    // {
-    //   id: 3,
-    //   name: "Benjamin",
-    //   userName: "Brothers",
-    // },
-  ]);
+export default function App({ usersData }) {
+  const [users, setUsers] = useState(usersData);
 
   return (
     <>

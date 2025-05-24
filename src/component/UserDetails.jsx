@@ -6,7 +6,10 @@ export default function UserDetails({ user, setUsers }) {
   //   const [user, setUser] = useState(user.user);
 
   return (
-    <div>
+    <div
+      arial-testid={`user-testid-${user.id}`}
+      data-testid={`user-testid-${user.id}`}
+    >
       <button
         type="button"
         onClick={() => {

@@ -9,7 +9,17 @@ import UserPage from "./react-router/pages/UserPages.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: (
+      <App
+        usersData={[
+          {
+            id: 1,
+            name: "Daniel Olatunde",
+            userName: "Dannypy",
+          },
+        ]}
+      />
+    ),
     children: [
       {
         path: "/blog-post",

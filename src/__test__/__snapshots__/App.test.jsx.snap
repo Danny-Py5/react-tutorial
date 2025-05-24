@@ -1,8 +1,11 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`App > should render user 1`] = `
+exports[`App > when user is one > should render user 1`] = `
 <div>
-  <div>
+  <div
+    arial-testid="user-testid-1"
+    data-testid="user-testid-1"
+  >
     <button
       type="button"
     >
