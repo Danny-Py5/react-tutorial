@@ -88,7 +88,6 @@ describe("App", () => {
             {
               id: 1,
               name: "Daniel Olatunde",
-              userName: "Dannypy",
             },
             {
               id: 2,
@@ -114,6 +113,61 @@ describe("App", () => {
         within(userDetails).queryByText("Gloria Daniel")
       ).not.toBeInTheDocument();
     });
+
+    it("Edits 2nd username and save", async () => {
+      render(
+        <App
+          usersData={[
+            {
+              id: 1,
+              name: "Daniel Olatunde",
+              userName: "Dannypy",
+            },
+            {
+              id: 2,
+              name: "Kemisola Gloria",
+              userName: "Gloria Daniel",
+            },
+          ]}
+        />
+      );
+      const userDetails2 = screen.getByTestId("user-testid-2");
+
+      await userEvent.click(
+        within(userDetails2).getByRole("button", {
+          name: "Edit",
+        })
+      );
+      const usernameInput = within(userDetails2).getByRole("textbox", {
+        name: "username",
+      });
+
+      expect(
+        within(userDetails2).getByLabelText("Username:")
+      ).toBeInTheDocument();
+      expect(
+        within(userDetails2).queryByText("Gloria Daniel")
+      ).not.toBeInTheDocument();
+      expect(usernameInput.value).not.toBeUndefined();
+      expect(usernameInput.value).toEqual("Gloria Daniel");
+
+      await userEvent.type(
+        within(userDetails2).getByLabelText("Username:"),
+        "123"
+      );
+      await userEvent.click(
+        within(userDetails2).getByRole("button", { name: "Update" })
+      );
+
+      expect(
+        within(userDetails2).queryByRole("button", { name: "Update" })
+      ).not.toBeInTheDocument();
+      expect(usernameInput).not.toBeInTheDocument();
+
+      expect(
+        within(userDetails2).getByText("Gloria Daniel123")
+      ).toBeInTheDocument();
+    });
   });
 });
 
@@ -123,5 +177,6 @@ tell me differences btw thing i import from vitest and from testing-react/react
 
 what vitest imports are for and do and also what imports from testing-library/react are for and what they do?
 
+// 9:19
 
 */

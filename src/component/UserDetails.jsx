@@ -7,7 +7,7 @@ export default function UserDetails({ user, setUsers }) {
 
   return (
     <div
-      arial-testid={`user-testid-${user.id}`}
+      // arial-testid={`user-testid-${user.id}`}
       data-testid={`user-testid-${user.id}`}
     >
       <button

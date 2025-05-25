@@ -3,7 +3,6 @@
 exports[`App > when user is one > should render user 1`] = `
 <div>
   <div
-    arial-testid="user-testid-1"
     data-testid="user-testid-1"
   >
     <button
