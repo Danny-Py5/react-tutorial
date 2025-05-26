@@ -9,18 +9,7 @@ export default function SecondLayer() {
     <>
       <ul>
         <h2>Second Layer</h2>
-        <li>
-          <strong>
-            Second Layer can access Age: {layerData.age} from the context
-            provider
-          </strong>
-        </li>
-        <li>
-          <strong>
-            Second Layer can access name: {layerData.name} from the context
-            provider
-          </strong>
-        </li>
+        <li>{layerData.name}</li>
       </ul>
       <ThirdLayer />
     </>

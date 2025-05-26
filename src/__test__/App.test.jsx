@@ -171,6 +171,21 @@ describe("App", () => {
   });
 });
 
+describe("Update UserContext", () => {
+  it("Updates display name", async () => {
+    // changing the name across all other component under the context provider
+    render(<App usersData={[]} />);
+
+    await userEvent.type(
+      screen.getByLabelText("Change LayerName:"),
+      "name updated"
+    );
+    await userEvent.click(screen.getByRole("button", { name: "Change" }));
+
+    expect(screen.getByText("Name: name updated")).toBeInTheDocument();
+  });
+});
+
 // my questions
 /* 
 tell me differences btw thing i import from vitest and from testing-react/react 

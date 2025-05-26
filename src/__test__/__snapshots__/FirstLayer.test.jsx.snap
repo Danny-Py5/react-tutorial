@@ -1,0 +1,44 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Render Context values > should display correct username 1`] = `
+<div>
+  <ul>
+    <h2>
+      FIrst Layer
+    </h2>
+    <li>
+      Id: 
+      2323
+    </li>
+    <li>
+      Name: 
+      daniel
+    </li>
+    <li>
+      Username: 
+      21
+    </li>
+    <li>
+      Email: 
+      23432
+       
+    </li>
+  </ul>
+  <ul>
+    <h2>
+      Second Layer
+    </h2>
+    <li>
+      daniel
+    </li>
+  </ul>
+  <ul>
+    <h2>
+      Third Layer
+    </h2>
+    <li>
+      daniel
+    </li>
+  </ul>
+</div>
+`;

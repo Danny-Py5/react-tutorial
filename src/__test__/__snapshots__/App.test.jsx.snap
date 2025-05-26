@@ -38,5 +38,68 @@ exports[`App > when user is one > should render user 1`] = `
       </span>
     </p>
   </div>
+  <div>
+    <div>
+      <h1>
+        React Context API
+      </h1>
+    </div>
+    <hr />
+    <div>
+      <label
+        for="input"
+      >
+        Change LayerName:
+      </label>
+      <input
+        id="input"
+        type="text"
+        value=""
+      />
+      <button>
+        Change
+      </button>
+    </div>
+    <div>
+      <ul>
+        <h2>
+          FIrst Layer
+        </h2>
+        <li>
+          Id: 
+          232323
+        </li>
+        <li>
+          Name: 
+          Daniel
+        </li>
+        <li>
+          Username: 
+          21
+        </li>
+        <li>
+          Email: 
+          232
+           
+        </li>
+      </ul>
+      <ul>
+        <h2>
+          Second Layer
+        </h2>
+        <li>
+          Daniel
+        </li>
+      </ul>
+      <ul>
+        <h2>
+          Third Layer
+        </h2>
+        <li>
+          Daniel
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>
 `;

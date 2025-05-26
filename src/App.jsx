@@ -2,17 +2,55 @@
 // library that must be installed (dev dependencies) are "vitest @testing-library/react jsdom", "@testing-library/jest-dom"
 import UserDetails from "./component/UserDetails.jsx";
 import "./globals.css";
-
 import { useState } from "react";
+import { layerContext } from "./contextAPI/context/LayerContext.js";
+import FirstLayer from "./contextAPI/FirstLayer.jsx";
 
 export default function App({ usersData }) {
   const [users, setUsers] = useState(usersData);
+
+  const [layerData, setLayerData] = useState({
+    name: "Daniel",
+    age: 21,
+    id: 232323,
+    likes: 232,
+  });
+  const [inputValue, setInputValue] = useState("");
+  const handleClick = () => {
+    setLayerData((prevLayerData) => ({
+      ...prevLayerData,
+      name: inputValue,
+    }));
+    setInputValue("");
+  };
 
   return (
     <>
       {users.map((user) => {
         return <UserDetails key={user.id} user={user} setUsers={setUsers} />;
       })}
+
+      <div>
+        <div>
+          <h1>React Context API</h1>
+        </div>
+        <hr />
+        <div>
+          <label htmlFor="input">Change LayerName:</label>
+          <input
+            type="text"
+            id="input"
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+          />
+          <button onClick={handleClick}>Change</button>
+        </div>
+        <div>
+          <layerContext.Provider value={{ layerData, setLayerData }}>
+            <FirstLayer />
+          </layerContext.Provider>
+        </div>
+      </div>
     </>
   );
 }
@@ -115,6 +153,8 @@ export default function App({ usersData }) {
 //   );
 // }
 
+//  -------------------------------------------------
+
 // context API ---> 5:43:36
 // import "./globals.css";
 
@@ -177,6 +217,7 @@ export default function App({ usersData }) {
 //   );
 // }
 
+//--------------------------------------------------
 // //debounce on my own but helped by ai at last
 // import { useEffect, useState } from "react";
 // import useDebounceSearch from "./temp.js";
