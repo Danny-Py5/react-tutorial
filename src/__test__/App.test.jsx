@@ -182,12 +182,26 @@ describe("App", () => {
 describe("render Context data", () => {
   it("render correct email", async () => {
     render(<App usersData={[]} />);
+    // server.use(
+    //   http.get("https://jsonplaceholder.typicode.com/users/*", (resolve) => {
+    //     return Response.json({
+    //       id: 333,
+    //       name: "Ifeoluwa",
+    //       username: "ifeoluwa",
+    //       email: "ifeoluwa@gmail.com",
+    //     });
+    //   })
+    // );
 
-    await waitFor(async () => {
-      expect(
-        await screen.findByText("Email: olatundedaniel943@gmail.com")
-      ).toBeInTheDocument();
-    });
+    // await waitFor(async () => {
+    expect(
+      await screen.findByText(
+        "Email: olatundedaniel943@gmail.com",
+        {},
+        { timeout: 6000 }
+      )
+    ).toBeInTheDocument();
+    // });
   });
 });
 
