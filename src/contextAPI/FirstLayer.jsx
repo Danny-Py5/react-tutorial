@@ -4,6 +4,7 @@ import { useContext } from "react";
 
 export default function FirstLayer() {
   let { layerData } = useContext(layerContext);
+  // console.log(layerData);
 
   return (
     <>
@@ -11,8 +12,8 @@ export default function FirstLayer() {
         <h2>FIrst Layer</h2>
         <li>Id: {layerData.id}</li>
         <li>Name: {layerData.name}</li>
-        <li>Username: {layerData.age}</li>
-        <li>Email: {layerData.likes} </li>
+        <li>Username: {layerData.username}</li>
+        <li>Email: {layerData.email} </li>
       </ul>
 
       <SecondLayer />

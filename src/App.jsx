@@ -2,19 +2,16 @@
 // library that must be installed (dev dependencies) are "vitest @testing-library/react jsdom", "@testing-library/jest-dom"
 import UserDetails from "./component/UserDetails.jsx";
 import "./globals.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { layerContext } from "./contextAPI/context/LayerContext.js";
 import FirstLayer from "./contextAPI/FirstLayer.jsx";
+import useFetchUser from "./contextAPI/hook/useFetchUser.js";
 
 export default function App({ usersData }) {
   const [users, setUsers] = useState(usersData);
+  const [user, loading, error] = useFetchUser(9);
 
-  const [layerData, setLayerData] = useState({
-    name: "Daniel",
-    age: 21,
-    id: 232323,
-    likes: 232,
-  });
+  const [layerData, setLayerData] = useState({});
   const [inputValue, setInputValue] = useState("");
   const handleClick = () => {
     setLayerData((prevLayerData) => ({
@@ -24,6 +21,13 @@ export default function App({ usersData }) {
     setInputValue("");
   };
 
+  useEffect(() => {
+    if (user && !loading) {
+      setLayerData(user);
+      // setInputValue(user.name);
+      // console.log(user);
+    }
+  }, [user, loading, error]);
   return (
     <>
       {users.map((user) => {

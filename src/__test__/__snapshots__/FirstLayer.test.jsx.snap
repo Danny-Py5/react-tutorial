@@ -16,11 +16,11 @@ exports[`Render Context values > should display correct username 1`] = `
     </li>
     <li>
       Username: 
-      21
+      dannypy
     </li>
     <li>
       Email: 
-      23432
+      daniel@gmail.com
        
     </li>
   </ul>

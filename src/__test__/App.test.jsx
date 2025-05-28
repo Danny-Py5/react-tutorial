@@ -1,7 +1,15 @@
 import { describe, expect, it } from "vitest";
 import userEvent from "@testing-library/user-event";
-import { render, screen, within } from "@testing-library/react";
+import {
+  findByText,
+  render,
+  screen,
+  waitFor,
+  within,
+} from "@testing-library/react";
 import App from "../App.jsx";
+import { server } from "../__mocks__/msv/sever.js";
+import { http } from "msw";
 
 describe("App", () => {
   describe("when user is one", () => {
@@ -166,6 +174,18 @@ describe("App", () => {
 
       expect(
         within(userDetails2).getByText("Gloria Daniel123")
+      ).toBeInTheDocument();
+    });
+  });
+});
+
+describe("render Context data", () => {
+  it("render correct email", async () => {
+    render(<App usersData={[]} />);
+
+    await waitFor(async () => {
+      expect(
+        await screen.findByText("Email: olatundedaniel943@gmail.com")
       ).toBeInTheDocument();
     });
   });

@@ -67,19 +67,15 @@ exports[`App > when user is one > should render user 1`] = `
         </h2>
         <li>
           Id: 
-          232323
         </li>
         <li>
           Name: 
-          Daniel
         </li>
         <li>
           Username: 
-          21
         </li>
         <li>
           Email: 
-          232
            
         </li>
       </ul>
@@ -87,17 +83,73 @@ exports[`App > when user is one > should render user 1`] = `
         <h2>
           Second Layer
         </h2>
-        <li>
-          Daniel
-        </li>
+        <li />
       </ul>
       <ul>
         <h2>
           Third Layer
         </h2>
+        <li />
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`render Context data > render correct email 1`] = `
+<div>
+  <div>
+    <div>
+      <h1>
+        React Context API
+      </h1>
+    </div>
+    <hr />
+    <div>
+      <label
+        for="input"
+      >
+        Change LayerName:
+      </label>
+      <input
+        id="input"
+        type="text"
+        value=""
+      />
+      <button>
+        Change
+      </button>
+    </div>
+    <div>
+      <ul>
+        <h2>
+          FIrst Layer
+        </h2>
         <li>
-          Daniel
+          Id: 
         </li>
+        <li>
+          Name: 
+        </li>
+        <li>
+          Username: 
+        </li>
+        <li>
+          Email: 
+           
+        </li>
+      </ul>
+      <ul>
+        <h2>
+          Second Layer
+        </h2>
+        <li />
+      </ul>
+      <ul>
+        <h2>
+          Third Layer
+        </h2>
+        <li />
       </ul>
     </div>
   </div>

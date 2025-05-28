@@ -8,8 +8,8 @@ describe("Render Context values", () => {
     const layerData = {
       id: 2323,
       name: "daniel",
-      age: 21,
-      likes: 23432,
+      username: "dannypy",
+      email: "daniel@gmail.com",
     };
     const { container } = render(
       <layerContext.Provider value={{ layerData }}>
